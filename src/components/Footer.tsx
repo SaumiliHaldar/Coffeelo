@@ -35,13 +35,11 @@ export function CallToAction() {
   )
 }
 
-// spot + tilt of each oval inside the cluster box (from the reference)
+// desktop: spot + tilt of each oval inside the cluster box (from the reference). Below lg they sit in a row.
 const socials = [
-  { name: 'TikTok', pos: 'top-[4%] left-[24%] -rotate-60' },
-  { name: 'LinkedIn', pos: 'top-0 left-[46%] rotate-12', href: 'https://www.linkedin.com/in/saumili-haldar-0804s2003' },
-  { name: 'Instagram', pos: 'top-[52%] left-0 -rotate-12' },
-  { name: 'Facebook', pos: 'top-[56%] left-[35%]' },
-  { name: 'Youtube', pos: 'top-[46%] left-[68%] rotate-30' },
+  { name: 'GitHub', pos: 'lg:top-[6%] lg:left-[6%] lg:-rotate-12', href: 'https://github.com/SaumiliHaldar' },
+  { name: 'LinkedIn', pos: 'lg:top-0 lg:left-[50%] lg:rotate-12', href: 'https://www.linkedin.com/in/saumili-haldar-0804s2003' },
+  { name: 'Email', pos: 'lg:top-[50%] lg:left-[28%] lg:-rotate-6', href: 'mailto:haldar.saumili843@gmail.com' },
 ]
 
 export default function Footer() {
@@ -52,13 +50,13 @@ export default function Footer() {
         <div className="wrap pb-10">
           <p
             aria-hidden="true"
-            className="text-center font-ui text-[clamp(4rem,18vw,15rem)] leading-none font-semibold text-orange/80 select-none"
+            className="font-ui lg:text-center text-[clamp(4rem,18vw,15rem)] leading-none font-semibold text-orange/80 select-none"
           >
             coffeelo
           </p>
 
-          <div className="mt-10 grid gap-8 border-t border-cream/15 pt-8 text-sm sm:grid-cols-3">
-            <ul className="space-y-1 text-cream/80">
+          <div className="mt-10 grid grid-cols-2 gap-8 border-t border-cream/15 pt-8 lg:grid-cols-3 lg:text-sm">
+            <ul className="space-y-3 text-cream/85 lg:space-y-1">
               <li><a href="#philosophy">Philosophy</a></li>
               <li><a href="#menu">Collection</a></li>
               <li><a href="#reviews">Guests</a></li>
@@ -68,16 +66,16 @@ export default function Footer() {
               <li><a href="#footer">Reservations</a></li>
               <li><a href="#footer">Private Events</a></li>
             </ul>
-            <p className="text-cream/60 sm:text-right">© coffeelo. All rights reserved.</p>
+            <p className="col-span-2 text-sm text-cream/60 lg:col-span-1 lg:text-right">© coffeelo. All rights reserved.</p>
           </div>
 
-          <ul className="relative mx-auto mt-8 h-36 w-[min(100%,22rem)]">
-            {socials.map((s) => (
-              <li key={s.name} className={`absolute ${s.pos}`}>
+          <ul className="mt-8 flex flex-wrap gap-3 lg:relative lg:mx-auto lg:block lg:h-36 lg:w-88">
+            {socials.map((s, i) => (
+              <li key={s.name} className={`lg:absolute ${i % 2 ? 'rotate-3' : '-rotate-2'} ${s.pos}`}>
                 <a
-                  href={s.href ?? '#'}
-                  {...(s.href && { target: '_blank', rel: 'noopener noreferrer' })}
-                  className="inline-block rounded-[50%] border-2 border-caramel/70 bg-espresso px-6 py-3 font-ui text-sm transition hover:bg-caramel hover:text-espresso"
+                  href={s.href}
+                  {...(s.href.startsWith('http') && { target: '_blank', rel: 'noopener noreferrer' })}
+                  className="inline-block rounded-[50%] border-2 border-caramel/50 bg-espresso px-7 py-3 font-ui text-sm transition hover:bg-cream/15"
                 >
                   {s.name}
                 </a>
