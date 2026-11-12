@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+
+@theme {
+  /* colours → bg-cream, text-espresso, bg-orange, ... */
+  --color-cream: #f3ede7;     /* main background */
+  --color-espresso: #200700;  /* footer, dark text */
+  --color-orange: #ad2a00;    /* buttons, accent sections */
+  --color-blush: #e4d5d4;     /* testimonials */
+  --color-taupe: #bdb2ae;     /* outer background */
+  --color-caramel: #ddaa80;   /* decorative accents */
+  --color-roast: #6b2414;     /* big headings */
+
+  /* fonts → font-display, font-body, font-ui */
+  --font-display: 'Bagel Fat One', cursive;
+  --font-body: 'DM Sans', sans-serif;
+  --font-ui: 'Poppins', sans-serif;
+}
+
+@layer base {
+  body { @apply bg-cream text-espresso font-body; }
+}
+
+/* page width: fills the screen, side gutter grows with it, stops at very wide monitors */
+@utility wrap {
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4.5vw, 4.5rem);
+}
+
+html { scroll-behavior: smooth; scrollbar-width: none; }
+html::-webkit-scrollbar { display: none; } /* page still scrolls, bar is hidden */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* visible keyboard focus on every link/button */
+:focus-visible {
+  outline: 3px solid var(--color-orange);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* phone menu drawer (native popover): slides in from the right, backdrop fades */
+.drawer {
+  translate: 100% 0;
+  transition: translate .3s ease, display .3s allow-discrete, overlay .3s allow-discrete;
+}
+.drawer:popover-open { translate: 0 0; }
+.drawer::backdrop {
+  background: rgb(32 7 0 / 0);
+  transition: background .3s, display .3s allow-discrete, overlay .3s allow-discrete;
+}
+.drawer:popover-open::backdrop { background: rgb(32 7 0 / .45); }
+@starting-style {
+  .drawer:popover-open { translate: 100% 0; }
+  .drawer:popover-open::backdrop { background: rgb(32 7 0 / 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .drawer, .drawer::backdrop { transition: none; }
+}
