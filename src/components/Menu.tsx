@@ -1,28 +1,25 @@
 // Layout ported from coffeelo.html. Each card is its own @container: every size inside is cqw of the card
 // (the reference's 28.4-unit card grid × 3.52), so a card looks identical from phone to desktop.
-const foam = (a: string, b: string, c: string, base: string) =>
-  `radial-gradient(circle at ${a}),radial-gradient(circle at ${b}),radial-gradient(circle at ${c}),${base}`
-
 const products = [
   {
     name: 'Caramel Macchiato',
     price: '₹299',
     img: '/images/caramel-macchiato.webp',
-    bg: foam('22% 30%,#ffffff8c 0 22%,transparent 24%', '78% 70%,#ffffff66 0 28%,transparent 30%', '60% 25%,#965a2847 0 17%,transparent 19%', '#D8B98F'),
+    bg: '/images/caramel-texture.webp',
     cup: 'left-[6cqw] top-[30cqw] w-[50cqw] rotate-6',
   },
   {
     name: 'Mocha Bliss',
     price: '₹449',
     img: '/images/mocha-bliss.webp',
-    bg: foam('70% 35%,#ffffff80 0 25%,transparent 27%', '40% 75%,#ffffff66 0 20%,transparent 22%', '85% 80%,#6e3c1e4d 0 21%,transparent 23%', '#B89268'),
+    bg: '/images/mocha-texture.webp',
     cup: '-left-[3cqw] -top-[24cqw] w-[74cqw] rotate-3',
   },
   {
     name: 'Vanilla Cream',
     price: '₹199',
     img: '/images/vanilla-cream.webp',
-    bg: foam('25% 35%,#ffffffe6 0 28%,transparent 30%', '75% 60%,#ffffffd9 0 24%,transparent 26%', '55% 20%,#d6ba8c80 0 18%,transparent 20%', '#EADBC2'),
+    bg: '/images/vanilla-texture.webp',
     cup: 'left-[3cqw] top-[22cqw] w-[60cqw] rotate-3',
   },
 ]
@@ -55,7 +52,7 @@ export default function Menu() {
                 mid ? 'lg:-mt-[1.9cqw]' : ''
               }`}
             >
-              <div className="absolute inset-x-[2.7cqw] top-[2.7cqw] h-[76cqw] rounded-[6cqw]" style={{ background: p.bg }} />
+              <div className="absolute inset-x-[2.7cqw] top-[2.7cqw] h-[76cqw] rounded-[6cqw] bg-cover bg-center" style={{ backgroundImage: `url(${p.bg})` }} />
 
               <img
                 src={p.img}

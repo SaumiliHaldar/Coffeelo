@@ -12,14 +12,13 @@ export default function Crafted() {
             aria-hidden="true"
             className="pointer-events-none absolute bottom-6 left-[12%] hidden h-16 w-40 bg-[radial-gradient(var(--color-caramel)_2px,transparent_2px)] bg-size-[22px_22px] opacity-60 md:block"
           />
-          {/* ponytail: reusing a cup shot, swap for the hand-holding-cup photo when you have it */}
           <img
-            src="/images/vanilla-cream.webp"
-            alt=""
+            src="/images/crafted-cup.webp"
+            alt="Hand holding an iced coffeelo latte"
             loading="lazy"
-            width={1102}
-            height={1427}
-            className="reveal relative z-10 mx-auto -mt-16 w-52 -rotate-6 drop-shadow-2xl md:mx-0 md:-mt-36 md:-ml-[clamp(1rem,4vw,3rem)] md:w-[min(34vw,26rem)]"
+            width={798}
+            height={1200}
+            className="reveal relative z-10 mx-auto -mt-16 w-56 rotate-6 drop-shadow-2xl md:mx-0 md:-mt-36 md:-ml-[max(1rem,4.5vw)] md:w-[min(32vw,30rem)]"
           />
           <div style={{ '--i': 1 } as React.CSSProperties} className="reveal">
             <h2 className="type-heading font-display leading-[1.25]">

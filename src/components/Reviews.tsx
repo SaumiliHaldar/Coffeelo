@@ -33,13 +33,13 @@ export default function Reviews() {
         </h2>
 
         <img
-          src="/images/caramel-macchiato.webp"
+          src="/images/coffee-cup.webp"
           alt=""
           loading="lazy"
-          width={800}
-          height={1200}
+          width={833}
+          height={1178}
           style={{ '--i': 1 } as React.CSSProperties}
-          className="reveal mx-auto mt-8 w-48 drop-shadow-2xl sm:w-56 lg:absolute lg:top-[35%] lg:left-[50.7%] lg:m-0 lg:w-[calc(var(--v)*26)] lg:-translate-x-1/2"
+          className="reveal mx-auto mt-8 w-48 drop-shadow-2xl sm:w-56 lg:absolute lg:top-[34%] lg:left-[50.7%] lg:m-0 lg:w-[calc(var(--v)*28)] lg:-translate-x-1/2"
         />
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:contents">
