@@ -6,9 +6,10 @@ const blob =
     return `${(r * Math.cos(t)).toFixed(2)},${(r * Math.sin(t)).toFixed(2)}`
   }).join(' ')
 
-export default function OrderBadge({ className = '' }: { className?: string }) {
+export default function OrderBadge({ className = '', style }: { className?: string; style?: React.CSSProperties }) {
   return (
     <a
+      style={style}
       href="#menu"
       className={`group relative grid size-[4.8em] shrink-0 place-items-center text-2xl md:text-3xl ${className}`}
     >

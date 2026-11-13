@@ -28,7 +28,7 @@ export default function Reviews() {
   return (
     <section id="reviews" className="wrap py-10">
       <div className="@container relative mx-auto rounded-[2rem] bg-blush px-4 py-12 sm:px-8 lg:aspect-[91.5/60] lg:rounded-[5cqw] lg:p-0">
-        <h2 className="text-center font-display text-3xl leading-tight text-roast sm:text-4xl lg:absolute lg:inset-x-0 lg:top-[10%] lg:text-[4.9cqw]">
+        <h2 className="reveal text-center font-display text-3xl leading-tight text-roast sm:text-4xl lg:absolute lg:inset-x-0 lg:top-[10%] lg:text-[4.9cqw]">
           Moments Worth <br /> Returning For
         </h2>
 
@@ -38,14 +38,16 @@ export default function Reviews() {
           loading="lazy"
           width={800}
           height={1200}
-          className="mx-auto mt-8 w-48 drop-shadow-2xl sm:w-56 lg:absolute lg:top-[35%] lg:left-[50.7%] lg:m-0 lg:w-[26%] lg:-translate-x-1/2"
+          style={{ '--i': 1 } as React.CSSProperties}
+          className="reveal mx-auto mt-8 w-48 drop-shadow-2xl sm:w-56 lg:absolute lg:top-[35%] lg:left-[50.7%] lg:m-0 lg:w-[26%] lg:-translate-x-1/2"
         />
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:contents">
-          {reviews.map((r) => (
+          {reviews.map((r, i) => (
             <li
               key={r.name}
-              className={`z-10 rounded-xl bg-cream/60 p-4 text-sm backdrop-blur-sm lg:absolute lg:rounded-[1.3cqw] lg:p-[1.6%] lg:text-[1.45cqw] ${r.pos}`}
+              style={{ '--i': i + 2 } as React.CSSProperties}
+              className={`reveal z-10 rounded-xl bg-cream/60 p-4 text-sm backdrop-blur-sm lg:absolute lg:rounded-[1.3cqw] lg:p-[1.6%] lg:text-[1.45cqw] ${r.pos}`}
             >
               <figure>
                 <figcaption className="flex items-center gap-2">

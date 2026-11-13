@@ -18,9 +18,9 @@ export default function Crafted() {
             loading="lazy"
             width={1102}
             height={1427}
-            className="relative z-10 mx-auto -mt-16 w-52 -rotate-6 drop-shadow-2xl md:mx-0 md:-mt-36 md:-ml-[clamp(1rem,4vw,3rem)] md:w-[min(34vw,26rem)]"
+            className="reveal relative z-10 mx-auto -mt-16 w-52 -rotate-6 drop-shadow-2xl md:mx-0 md:-mt-36 md:-ml-[clamp(1rem,4vw,3rem)] md:w-[min(34vw,26rem)]"
           />
-          <div>
+          <div style={{ '--i': 1 } as React.CSSProperties} className="reveal">
             <h2 className="font-display text-4xl md:text-5xl">
               Crafted Beyond <br /> the Ordinary
             </h2>

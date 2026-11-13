@@ -13,7 +13,7 @@ export default function Menu() {
         className="pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(var(--color-caramel)_1.5px,transparent_1.5px)] bg-size-[18px_18px] opacity-40"
       />
 
-      <div className="relative flex flex-col-reverse gap-4 md:flex-row md:items-end md:justify-between">
+      <div className="reveal relative flex flex-col-reverse gap-4 md:flex-row md:items-end md:justify-between">
         <p className="max-w-xs text-sm text-espresso/70">
           A rich, chilled coffee made with carefully selected ingredients for bold flavor in every sip.
         </p>
@@ -27,7 +27,8 @@ export default function Menu() {
         {products.map((p, i) => (
           <li
             key={p.name}
-            className={`relative mx-auto w-full max-w-sm rounded-3xl sm:last:col-span-2 lg:last:col-span-1 bg-white p-3 shadow-lg shadow-espresso/10 ${
+            style={{ '--i': i } as React.CSSProperties}
+            className={`reveal relative mx-auto w-full max-w-sm rounded-3xl sm:last:col-span-2 lg:last:col-span-1 bg-white p-3 shadow-lg shadow-espresso/10 ${
               i === 1 ? 'lg:-translate-y-10' : ''
             }`}
           >
