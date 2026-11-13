@@ -1,62 +1,101 @@
+// Layout ported from coffeelo.html. Each card is its own @container: every size inside is cqw of the card
+// (the reference's 28.4-unit card grid × 3.52), so a card looks identical from phone to desktop.
+const foam = (a: string, b: string, c: string, base: string) =>
+  `radial-gradient(circle at ${a}),radial-gradient(circle at ${b}),radial-gradient(circle at ${c}),${base}`
+
 const products = [
-  { name: 'Caramel Macchiato', price: '$3.56', img: '/images/caramel-macchiato.webp', bg: 'from-caramel/60 to-cream' },
-  { name: 'Mocha Bliss', price: '$5.46', img: '/images/mocha-bliss.webp', bg: 'from-espresso/30 to-cream' },
-  { name: 'Vanilla Cream', price: '$2.46', img: '/images/vanilla-cream.webp', bg: 'from-blush to-cream' },
+  {
+    name: 'Caramel Macchiato',
+    price: '₹299',
+    img: '/images/caramel-macchiato.webp',
+    bg: foam('22% 30%,#ffffff8c 0 22%,transparent 24%', '78% 70%,#ffffff66 0 28%,transparent 30%', '60% 25%,#965a2847 0 17%,transparent 19%', '#D8B98F'),
+    cup: 'left-[6cqw] top-[30cqw] w-[50cqw] rotate-6',
+  },
+  {
+    name: 'Mocha Bliss',
+    price: '₹449',
+    img: '/images/mocha-bliss.webp',
+    bg: foam('70% 35%,#ffffff80 0 25%,transparent 27%', '40% 75%,#ffffff66 0 20%,transparent 22%', '85% 80%,#6e3c1e4d 0 21%,transparent 23%', '#B89268'),
+    cup: '-left-[3cqw] -top-[24cqw] w-[74cqw] rotate-3',
+  },
+  {
+    name: 'Vanilla Cream',
+    price: '₹199',
+    img: '/images/vanilla-cream.webp',
+    bg: foam('25% 35%,#ffffffe6 0 28%,transparent 30%', '75% 60%,#ffffffd9 0 24%,transparent 26%', '55% 20%,#d6ba8c80 0 18%,transparent 20%', '#EADBC2'),
+    cup: 'left-[3cqw] top-[22cqw] w-[60cqw] rotate-3',
+  },
 ]
 
+// Desktop (lg+): measured from the approved reference screenshot (% of page width), 100:60 stage, max 1440px wide.
+// Below lg: stacked. Don't change this section as a side effect of other work.
 export default function Menu() {
   return (
-    <section id="menu" className="relative wrap py-10 md:py-14">
-      {/* dot grid decoration */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(var(--color-caramel)_1.5px,transparent_1.5px)] bg-size-[18px_18px] opacity-40"
-      />
-
-      <div className="reveal relative flex flex-col-reverse gap-4 md:flex-row md:items-end md:justify-between">
-        <p className="max-w-xs text-sm text-espresso/70">
+    <section id="menu" className="@container relative wrap py-12 lg:mx-auto lg:aspect-[100/56] lg:max-w-[1440px] lg:p-0">
+      <div className="flex flex-col-reverse gap-4 lg:contents">
+        <p className="reveal max-w-80 type-body text-espresso/70 lg:absolute lg:top-[7cqw] lg:left-[6.5cqw] lg:w-[26cqw] lg:max-w-none lg:leading-[1.45]">
           A rich, chilled coffee made with carefully selected ingredients for bold flavor in every sip.
         </p>
-        <h2 className="font-display text-4xl text-roast md:text-right md:text-5xl">
-          Curated for <br className="hidden md:block" />
+        <h2 className="reveal type-heading text-right font-display leading-[1.2] text-roast lg:absolute lg:top-[5cqw] lg:right-[6.5cqw] lg:leading-[1.4]">
+          Curated for
+          <br />
           Refined Palates
         </h2>
       </div>
 
-      <ul className="relative mt-16 grid gap-x-8 gap-y-20 sm:grid-cols-2 lg:mt-20 lg:grid-cols-[repeat(3,minmax(0,20rem))] lg:justify-center lg:gap-x-10">
-        {products.map((p, i) => (
-          <li
-            key={p.name}
-            style={{ '--i': i } as React.CSSProperties}
-            className={`reveal relative mx-auto w-full max-w-sm rounded-3xl sm:last:col-span-2 lg:last:col-span-1 bg-white p-3 shadow-lg shadow-espresso/10 ${
-              i === 1 ? 'lg:-translate-y-10' : ''
-            }`}
-          >
-            <div className={`relative h-52 rounded-2xl bg-linear-to-b ${p.bg}`}>
+      <ul className="mt-12 grid gap-10 sm:grid-cols-2 lg:absolute lg:top-[23cqw] lg:right-[6.5cqw] lg:left-[6.5cqw] lg:m-0 lg:grid-cols-[repeat(3,24cqw)] lg:justify-between lg:gap-0">
+        {products.map((p, i) => {
+          const [first, ...rest] = p.name.split(' ')
+          const mid = i === 1
+          return (
+            <li
+              key={p.name}
+              style={{ '--i': i } as React.CSSProperties}
+              className={`reveal group @container relative mx-auto aspect-[148/172] w-full max-w-80 rounded-[8.4%/7.8%] bg-white shadow-[0_1.2rem_3rem_rgba(90,45,25,.13)] sm:last:col-span-2 lg:max-w-none lg:last:col-span-1 ${
+                mid ? 'lg:-mt-[1.9cqw]' : ''
+              }`}
+            >
+              <div className="absolute inset-x-[2.7cqw] top-[2.7cqw] h-[76cqw] rounded-[6cqw]" style={{ background: p.bg }} />
+
               <img
                 src={p.img}
                 alt={p.name}
                 loading="lazy"
-                className="absolute bottom-0 left-1/2 h-[125%] w-auto max-w-none -translate-x-1/2 object-contain drop-shadow-xl"
+                className={`absolute h-auto drop-shadow-xl transition duration-300 group-hover:-translate-y-[2.8cqw] group-hover:scale-[1.03] ${p.cup}`}
               />
-            </div>
 
-            <span className="absolute -top-3 -left-3 rounded-full bg-orange px-3 py-1 font-ui text-sm font-semibold text-cream">
-              {p.price}
-            </span>
+              <span
+                className={`absolute bg-orange font-display leading-[1.2] text-cream ${
+                  mid
+                    ? 'right-[12.8cqw] bottom-[10.8cqw] rounded-[4.2cqw] px-[4.2cqw] py-[2.5cqw] text-[5.5cqw]'
+                    : '-top-[3.4cqw] -left-[5.4cqw] rounded-[3.5cqw] px-[3.5cqw] py-[1.9cqw] text-[5cqw]'
+                }`}
+              >
+                {p.price}
+              </span>
 
-            <div className="flex items-center justify-between gap-4 px-2 pt-4 pb-2">
-              <h3 className="font-display text-xl text-roast">{p.name}</h3>
               <button
                 type="button"
                 aria-label={`Add ${p.name} to order`}
-                className="grid size-10 shrink-0 place-items-center rounded-full bg-espresso text-2xl leading-none text-cream transition hover:bg-orange"
+                className={`absolute top-[10cqw] grid min-h-8 min-w-8 place-items-center ${mid ? 'right-[7.4cqw] size-[15cqw]' : 'right-[9.5cqw] size-[9.5cqw]'} rounded-full bg-[#5C2515] text-cream transition hover:scale-110 hover:bg-orange`}
               >
-                +
+                <svg viewBox="0 0 20 20" className="size-[55%]" aria-hidden="true">
+                  <path d="M10 3v14M3 10h14" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" />
+                </svg>
               </button>
-            </div>
-          </li>
-        ))}
+
+              <h3
+                className={`absolute font-display text-[7.5cqw] leading-[1.15] ${
+                  mid ? 'bottom-[9.5cqw] left-[8.8cqw] text-roast' : 'bottom-[12.8cqw] left-[51cqw] text-espresso'
+                }`}
+              >
+                {first}
+                <br />
+                {rest.join(' ')}
+              </h3>
+            </li>
+          )
+        })}
       </ul>
     </section>
   )

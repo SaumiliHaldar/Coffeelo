@@ -6,7 +6,7 @@ export default function Wave({ className = '', deep = false }: { className?: str
       viewBox={deep ? '0 0 1440 160' : '0 0 1440 80'}
       preserveAspectRatio="none"
       aria-hidden="true"
-      className={`-my-px block w-full ${deep ? 'h-[12vw]' : 'h-10 md:h-20'} ${className}`}
+      className={`-my-px block w-full ${deep ? 'h-[min(8vw,120px)]' : 'h-10 md:h-20'} ${className}`}
     >
       <path
         fill="currentColor"

@@ -11,14 +11,14 @@ const closeDrawer = (e: React.MouseEvent<HTMLElement>) => e.currentTarget.closes
 
 export default function Navbar() {
   return (
-    <header className="wrap flex items-center justify-between gap-4 py-5 lg:pt-[2.2vw] lg:pr-[5vw] lg:pb-[1vw] lg:pl-[4.2vw]">
-      <a href="#" className="font-ui text-2xl font-semibold text-orange lg:text-[3.1vw]">
+    <header className="wrap flex items-center justify-between gap-4 py-5 lg:pt-[min(2.2vw,32px)] lg:pr-[5vw] lg:pb-[min(1vw,14px)] lg:pl-[4.2vw]">
+      <a href="#" className="font-ui text-2xl font-semibold text-orange lg:text-[min(3.1vw,45px)]">
         coffeelo
       </a>
 
       {/* tablet + desktop */}
-      <nav className="hidden items-center gap-6 font-ui text-sm sm:flex lg:gap-[2.6vw] lg:text-[max(13px,1.15vw)]">
-        <ul className="flex gap-6 lg:gap-[2.6vw]">
+      <nav className="hidden items-center gap-6 font-ui text-sm sm:flex lg:gap-[min(2.6vw,37px)] lg:text-[clamp(13px,1.15vw,16.5px)]">
+        <ul className="flex gap-6 lg:gap-[min(2.6vw,37px)]">
           {links.slice(0, -1).map(([label, href]) => (
             <li key={label}>
               <a href={href} className="hover:text-orange">
@@ -27,7 +27,7 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <a href="#footer" className="rounded-full bg-orange px-5 py-2 font-semibold lg:px-[2.2vw] lg:py-[0.9vw] text-cream hover:bg-espresso">
+        <a href="#footer" className="rounded-full bg-orange px-5 py-2 font-semibold lg:px-[min(2.2vw,32px)] lg:py-[min(0.9vw,13px)] text-cream hover:bg-espresso">
           Contact
         </a>
       </nav>
