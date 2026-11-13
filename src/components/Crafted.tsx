@@ -6,7 +6,7 @@ export default function Crafted() {
         <path fill="currentColor" d="M0 8.5V6C10 7.2 20 8.6 30 7.8 40 6.5 45 0 55 0 66 0 78 8.4 90 8 95 7.8 98 7.3 100 7V8.5Z" />
       </svg>
       <div className="bg-orange text-cream">
-        <div className="wrap relative grid items-center gap-8 pb-10 md:grid-cols-2">
+        <div className="wrap relative grid items-center gap-6 pt-4 md:grid-cols-2 md:gap-8 md:pt-0 md:pb-10">
           {/* dots under the cup */}
           <div
             aria-hidden="true"
@@ -18,13 +18,13 @@ export default function Crafted() {
             loading="lazy"
             width={798}
             height={1200}
-            className="reveal relative z-10 mx-auto -mt-16 w-56 rotate-6 drop-shadow-2xl md:mx-0 md:-mt-36 md:-ml-[max(1rem,4.5vw)] md:w-[min(32vw,30rem)]"
+            className="reveal relative z-10 -mt-8 -mb-[5vw] -ml-[max(1rem,4.5vw)] w-60 rotate-6 drop-shadow-2xl md:mx-0 md:-mt-36 md:-ml-[max(1rem,4.5vw)] md:-mb-[min(7.9vw,7.4rem)] md:w-[min(32vw,30rem)]"
           />
-          <div style={{ '--i': 1 } as React.CSSProperties} className="reveal">
+          <div style={{ '--i': 1 } as React.CSSProperties} className="reveal order-first text-right md:order-none md:text-left">
             <h2 className="type-heading font-display leading-[1.25]">
               Crafted Beyond <br /> the Ordinary
             </h2>
-            <p className="type-body mt-6 max-w-sm text-cream/85 md:ml-auto lg:max-w-[26vw]">
+            <p className="type-body mt-6 ml-auto max-w-sm text-cream/85 lg:max-w-[26vw]">
               Every bean is thoughtfully sourced, expertly roasted, and meticulously brewed to celebrate the art
               of exceptional coffee. Designed for those who appreciate quiet luxury in every sip.
             </p>
