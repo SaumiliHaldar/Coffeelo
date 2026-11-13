@@ -66,7 +66,7 @@ export default function Footer() {
               <li><a href="#footer">Reservations</a></li>
               <li><a href="#footer">Private Events</a></li>
             </ul>
-            <p className="col-span-2 text-sm text-cream/60 lg:col-span-1 lg:text-right">© coffeelo. All rights reserved.</p>
+            <p className="col-span-2 text-sm text-cream/60 lg:col-span-1 lg:text-right">© Coffeelo. All rights reserved.</p>
           </div>
 
           <ul className="mt-8 flex flex-wrap gap-3 lg:relative lg:mx-auto lg:block lg:h-36 lg:w-88">

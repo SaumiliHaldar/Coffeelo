@@ -20,12 +20,11 @@
   body { @apply bg-cream text-espresso font-body; }
 }
 
-/* page width: fills the screen, side gutter grows with it, stops at very wide monitors */
+/* page width: always the full screen; side gutter is 4.5% of the width (min 16px) */
 @utility wrap {
   width: 100%;
-  max-width: 90rem;
   margin-inline: auto;
-  padding-inline: clamp(1rem, 4.5vw, 4.5rem);
+  padding-inline: max(1rem, 4.5vw);
 }
 
 html { scroll-behavior: smooth; scrollbar-width: none; }

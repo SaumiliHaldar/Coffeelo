@@ -11,14 +11,14 @@ const closeDrawer = (e: React.MouseEvent<HTMLElement>) => e.currentTarget.closes
 
 export default function Navbar() {
   return (
-    <header className="wrap flex items-center justify-between gap-4 py-5">
-      <a href="#" className="font-ui text-2xl font-semibold text-orange lg:text-[min(2.3vw,2.1rem)]">
+    <header className="wrap flex items-center justify-between gap-4 py-5 lg:pt-[2.2vw] lg:pr-[5vw] lg:pb-[1vw] lg:pl-[4.2vw]">
+      <a href="#" className="font-ui text-2xl font-semibold text-orange lg:text-[3.1vw]">
         coffeelo
       </a>
 
       {/* tablet + desktop */}
-      <nav className="hidden items-center gap-6 font-ui text-sm sm:flex">
-        <ul className="flex gap-6">
+      <nav className="hidden items-center gap-6 font-ui text-sm sm:flex lg:gap-[2.6vw] lg:text-[max(13px,1.15vw)]">
+        <ul className="flex gap-6 lg:gap-[2.6vw]">
           {links.slice(0, -1).map(([label, href]) => (
             <li key={label}>
               <a href={href} className="hover:text-orange">
@@ -27,7 +27,7 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <a href="#footer" className="rounded-full bg-orange px-5 py-2 font-semibold text-cream hover:bg-espresso">
+        <a href="#footer" className="rounded-full bg-orange px-5 py-2 font-semibold lg:px-[2.2vw] lg:py-[0.9vw] text-cream hover:bg-espresso">
           Contact
         </a>
       </nav>
@@ -48,7 +48,7 @@ export default function Navbar() {
         id="mobile-nav"
         popover="auto"
         aria-label="Main"
-        className="drawer fixed inset-y-0 right-0 left-auto m-0 h-dvh max-h-none w-full border-0 bg-cream px-[clamp(1rem,4.5vw,4.5rem)] py-5"
+        className="drawer fixed inset-y-0 right-0 left-auto m-0 h-dvh max-h-none w-full border-0 bg-cream px-[max(1rem,4.5vw)] py-5"
       >
         <div className="flex items-center justify-between">
           <span className="font-ui text-2xl font-semibold text-orange">coffeelo</span>
