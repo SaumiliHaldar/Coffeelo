@@ -1,17 +1,17 @@
 // pos = where each card floats on desktop, in % of the panel (measured from the reference)
 const reviews = [
   {
-    name: 'Isabella M.',
+    name: 'Ananya Sharma',
     text: 'Every detail feels intentional, from the atmosphere to the final sip. Truly exceptional.',
     pos: 'lg:top-[35%] lg:left-[10.5%] lg:w-[calc(var(--v)*27.6)]',
   },
   {
     name: 'Amelia Rhodes',
-    text: 'Every detail feels intentional, from the atmosphere to the final sip. Truly exceptional.',
+    text: 'Warm, unhurried and beautifully made. The caramel macchiato alone is worth the visit.',
     pos: 'lg:top-[36.7%] lg:left-[62.3%] lg:w-[calc(var(--v)*31.6)]',
   },
   {
-    name: 'Sophia Hayes',
+    name: 'Rohan Mehta',
     text: 'A destination for people who truly appreciate specialty coffee. Every detail is thoughtfully considered.',
     pos: 'lg:top-[63.3%] lg:left-[5.1%] lg:w-[calc(var(--v)*34.9)]',
   },

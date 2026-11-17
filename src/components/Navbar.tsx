@@ -11,7 +11,7 @@ const closeDrawer = (e: React.MouseEvent<HTMLElement>) => e.currentTarget.closes
 
 export default function Navbar() {
   return (
-    <header className="wrap flex items-center justify-between gap-4 py-5 lg:pt-[min(1.4vw,20px)] lg:pr-[5vw] lg:pb-[min(1vw,14px)] lg:pl-[4.2vw]">
+    <header className="wrap sticky top-0 z-50 flex bg-cream/75 backdrop-blur-md items-center justify-between gap-4 py-2.5 lg:py-[min(0.9vw,13px)] lg:pr-[5vw] lg:pl-[4.2vw]">
       <a href="#" className="font-ui text-2xl font-semibold text-orange lg:text-[min(1.8vw,26px)]">
         coffeelo
       </a>
