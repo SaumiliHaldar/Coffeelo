@@ -1,6 +1,6 @@
 import OrderBadge from './OrderBadge'
 
-const big = 'text-[clamp(3rem,11vw,9rem)] lg:absolute lg:text-[calc(var(--u)*14.5)]'
+const big = 'text-[clamp(3rem,11vw,9rem)] lg:absolute lg:text-[calc(var(--u)*15.8)]'
 
 // Desktop (lg+): the reference composition, canvas coordinates. --u = 1% of width but capped at the 1440px size:
 // --u is also capped so the hero (72u tall) fits one screen; everything is placed from the centre in --u.
@@ -8,7 +8,7 @@ const big = 'text-[clamp(3rem,11vw,9rem)] lg:absolute lg:text-[calc(var(--u)*14.
 export default function Hero() {
   return (
     <section>
-      <div className="@container wrap relative pt-4 pb-10 lg:h-[calc(var(--u)*72)] lg:p-0 lg:[--u:min(1cqw,14.4px,calc((100svh-6rem)/72))]">
+      <div className="@container wrap relative pt-4 pb-10 lg:h-[calc(var(--u)*72)] lg:p-0 lg:[--u:min(1cqw,14.4px,calc((100svh-4.75rem)/72))]">
         {/* dot grid, top-right */}
         <div
           aria-hidden="true"
@@ -17,12 +17,12 @@ export default function Hero() {
 
         <h1 className="reveal relative font-display leading-[0.95] text-roast lg:absolute lg:inset-0 lg:leading-none">
           <span className="flex flex-wrap items-end justify-center gap-x-[0.25em] lg:contents">
-            <span className="mb-[0.35em] text-[clamp(1.25rem,3.5vw,2.75rem)] lg:absolute lg:top-[calc(var(--u)*8.5)] lg:left-[calc(50%-var(--u)*39)] lg:mb-0 lg:text-[calc(var(--u)*5.4)]">
+            <span className="mb-[0.35em] text-[clamp(1.25rem,3.5vw,2.75rem)] lg:absolute lg:top-[calc(var(--u)*7.9)] lg:left-[calc(50%-var(--u)*45.2)] lg:mb-0 lg:text-[calc(var(--u)*6.1)]">
               An Elevated
             </span>
-            <span className={`${big} lg:top-[calc(var(--u)*3.5)] lg:right-[calc(50%-var(--u)*44)]`}>Coffee</span>
+            <span className={`${big} lg:top-[calc(var(--u)*2.6)] lg:right-[calc(50%-var(--u)*46.5)]`}>Coffee</span>
           </span>
-          <span className={`${big} block text-center lg:top-[calc(var(--u)*15.5)] lg:left-[calc(50%-var(--u)*42)]`}>Experience</span>
+          <span className={`${big} block text-center lg:top-[calc(var(--u)*16)] lg:left-[calc(50%-var(--u)*45.5)]`}>Experience</span>
         </h1>
 
 
@@ -41,8 +41,8 @@ export default function Hero() {
             style={{ '--i': 2 } as React.CSSProperties}
             className="reveal max-w-52 lg:absolute lg:top-[calc(var(--u)*39)] lg:left-[calc(50%-var(--u)*45.4)] lg:w-[calc(var(--u)*22)] lg:max-w-none"
           >
-            <p className="font-ui font-semibold lg:text-[max(15px,calc(var(--u)*1.9))]">Single-Origin</p>
-            <p className="mt-2 text-sm text-espresso/75 lg:mt-[calc(var(--u)*1)] lg:text-[max(13px,calc(var(--u)*1.4))] lg:leading-normal">
+            <p className="font-ui font-semibold lg:text-[max(17px,calc(var(--u)*2.3))]">Single-Origin</p>
+            <p className="mt-2 text-sm text-espresso/75 lg:mt-[calc(var(--u)*1)] lg:text-[max(15px,calc(var(--u)*1.75))] lg:leading-normal">
               Notes of cacao, caramel, and stone fruit, slow roasted in small batches.
             </p>
           </div>
